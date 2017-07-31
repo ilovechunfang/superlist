@@ -6,6 +6,8 @@ class NewVisitorTest(unittest.TestCase):
 	def setUp(self):
 		print('setup...')
 		self.browser = webdriver.Firefox()
+		 # 隐性等待，最长等30秒  
+		self.browser.implicitly_wait(10)
 	def tearDown(self):
 		print('teardown..')
 		self.browser.quit()
@@ -18,11 +20,8 @@ class NewVisitorTest(unittest.TestCase):
 		self.fail('Finish the test')
 
 
-print(__name__)
-
 if __name__ == '__main__':
-	unittest.main(warnings='ignore')
+	unittest.main()
 
 # 2017.7.30
-
 
